@@ -1,27 +1,49 @@
 {
-  "name": "stake-to-vote",
+  "name": "erc-20-blackilst",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "npx hardhat compile",
     "test": "npx hardhat test",
     "coverage": "npx hardhat coverage",
-    "deploy": "npx hardhat deploy"
+    "coverage:badge": "node ./coverage.js",
+    "deploy": "npx hardhat deploy --tags blacklist-erc20",
+    "add-to-blacklist": "npx hardhat deploy --tags add-to-blackilst",
+    "batch-add-to-blacklist": "npx hardhat deploy --tags add-to-blackilst-batch",
+    "remove-from-blacklist": "npx hardhat deploy --tags remove-from-blacklist",
+    "get-all-blacklisted": "npx hardhat deploy --tags get-all-blacklisted"
   },
   "author": "Giorgos Kourtellos",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@openzeppelin/contracts": "^5.0.0",
+    "@openzeppelin/contracts-upgradeable": "^5.0.0",
+    "@openzeppelin/hardhat-upgrades": "^2.4.1",
+    "alchemy-sdk": "^3.0.0",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.8.1",
     "hardhat": "^2.19.1",
     "hardhat-deploy": "^0.11.43"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.2",
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.9",
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.1",
     "@typechain/ethers-v6": "^0.5.1",
     "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.10",
+    "@types/mocha": "^10.0.4",
+    "chai": "^4.3.10",
     "hardhat-contract-sizer": "^2.10.0",
     "hardhat-gas-reporter": "^1.0.9",
+    "lcov2badge": "^0.1.2",
     "solidity-coverage": "^0.8.5",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.3.2",
     "typescript": "^5.2.2"
   }
 }
